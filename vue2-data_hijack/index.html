@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">{{ mName }}</div>
+    <script src="./dist/vue.js"></script>
+    <script>
+      // viewModel 数据模型
+      let vm = new Vue({
+        el: '#app',
+        data() {
+          return {
+            mName: 'HEI',
+            arr: [1,2,{a:1}]
+          }
+        },
+      })
+      vm.arr.push(4)
+      // 新增属性不能变监听
+      console.log('vm.mName', vm.mName)
+      console.log('vm', vm)
+      // 数组内部不采用defineProperty 性能消耗严重
+      // push shift pop unshift reverse sort splice 7个方法最拦截 通过数据prp
+    </script>
+  </body>
+</html>
