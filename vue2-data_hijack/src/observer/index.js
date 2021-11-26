@@ -42,6 +42,7 @@ function defineReactive(data, key, value) {
       value = newV
     },
     get() {
+      console.log('v', value)
       return value
     },
   })

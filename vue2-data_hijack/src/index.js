@@ -8,3 +8,4 @@ function Vue(options) {
 // 扩展原型
 initMixin(Vue)
 export default Vue
+

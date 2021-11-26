@@ -16,14 +16,19 @@
         data() {
           return {
             mName: 'HEI',
-            arr: [1,2,{a:1}]
+            mPersion: {
+              name: 'TOM'
+            }
           }
         },
       })
-      vm.arr.push(4)
-      // 新增属性不能变监听
-      console.log('vm.mName', vm.mName)
-      console.log('vm', vm)
+      console.log('vm' , vm)
+      setTimeout(() => {
+        vm._data.mPersion = {a:1}
+        setTimeout(() => {
+          console.log(vm._data.mName)
+        }, 1000);
+      }, 1000)
       // 数组内部不采用defineProperty 性能消耗严重
       // push shift pop unshift reverse sort splice 7个方法最拦截 通过数据prp
     </script>
