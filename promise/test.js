@@ -57,35 +57,39 @@
 //     }
 //   )
 
-new Promise((resolve, reject) => {
-  resolve(1)
-})
-  .then((value) => {
-    return new Promise((resolve1, reject1) => {
-      resolve1(3)
-    })
-  })
-  .then(
-    (value) => {
-      console.log('p1 => then => onfulfilled => ', value)
-    },
-    (reason) => {
-      console.log('p1 => then => onRejected =>', reason)
-    }
-  )
-new Promise((resolve, reject) => {
-  resolve(1)
-})
-  .then((value) => {
-    return new Promise((resolve1, reject1) => {
-      reject1(3)
-    })
-  })
-  .then(
-    (value) => {
-      console.log('p2 => then => onfulfilled => ', value)
-    },
-    (reason) => {
-      console.log('p2 => then => onRejected =>', reason)
-    }
-  )
+// new Promise((resolve, reject) => {
+//   resolve(1)
+// })
+//   .then((value) => {
+//     return new Promise((resolve1, reject1) => {
+//       resolve1(3)
+//     })
+//   })
+//   .then(
+//     (value) => {
+//       console.log('p1 => then => onfulfilled => ', value)
+//     },
+//     (reason) => {
+//       console.log('p1 => then => onRejected =>', reason)
+//     }
+//   )
+// new Promise((resolve, reject) => {
+//   resolve(1)
+// })
+//   .then((value) => {
+//     return new Promise((resolve1, reject1) => {
+//       reject1(3)
+//     })
+//   })
+//   .then(
+//     (value) => {
+//       console.log('p2 => then => onfulfilled => ', value)
+//     },
+//     (reason) => {
+//       console.log('p2 => then => onRejected =>', reason)
+//     }
+//   )
+
+// Promise.reject(new Promise((resolve,reject) => {resolve(1)})).then(null,r => {console.log(r)})
+
+Promise.all({}).then(r => console.log(r), d => {console.log(d)})
